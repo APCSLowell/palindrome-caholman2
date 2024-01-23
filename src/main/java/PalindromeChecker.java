@@ -56,14 +56,6 @@ public String reverse(String str)
     for(int i=str.length()-1; i>=0; i--){
       sNew += str.charAt(i);
     }
-    for(int i=sNew.length()-1; i>=0; i--){
-      if(sNew.substring(i, i+1).equals(" ")){
-        sNew = sNew.substring(0,i) + sNew.substring(i+1);
-      } 
-      if(!Character.isLetter(sNew.charAt(i))){
-        sNew = sNew.substring(0,i) + sNew.substring(i+1);
-      }
-    }
     return sNew;
 }
 }
