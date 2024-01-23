@@ -37,13 +37,33 @@ public void tester()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  for(int i=word.length()-1; i>=0; i--){
+    if(word.substring(i, i+1).equals(" ")){
+      word = word.substring(0,i) + word.substring(i+1);
+    } 
+    if(!Character.isLetter(word.charAt(i))){
+      word = word.substring(0,i) + word.substring(i+1);
+    }
+  }
+  if(reverse(word).toLowerCase().equals(word.toLowerCase())){
+    return true;
+  }
   return false;
 }
 public String reverse(String str)
 {
     String sNew = new String();
-    //your code here
+    for(int i=str.length()-1; i>=0; i--){
+      sNew += str.charAt(i);
+    }
+    for(int i=sNew.length()-1; i>=0; i--){
+      if(sNew.substring(i, i+1).equals(" ")){
+        sNew = sNew.substring(0,i) + sNew.substring(i+1);
+      } 
+      if(!Character.isLetter(sNew.charAt(i))){
+        sNew = sNew.substring(0,i) + sNew.substring(i+1);
+      }
+    }
     return sNew;
 }
 }
